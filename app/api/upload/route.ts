@@ -2,13 +2,21 @@ import { NextRequest, NextResponse } from 'next/server';
 import { v2 as cloudinary } from 'cloudinary';
 import { Readable } from 'stream';
 
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
-
 export async function POST(request: NextRequest) {
+  const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
+  const cloudKey = process.env.CLOUDINARY_API_KEY;
+  const cloudSecret = process.env.CLOUDINARY_API_SECRET;
+
+  if (!cloudName || !cloudKey || !cloudSecret) {
+    return NextResponse.json({ error: 'Cloudinary environment variables are not configured' }, { status: 500 });
+  }
+
+  cloudinary.config({
+    cloud_name: cloudName,
+    api_key: cloudKey,
+    api_secret: cloudSecret,
+  });
+
   const formData = await request.formData();
   const file = formData.get('file') as File;
 

@@ -5,13 +5,14 @@ import { verifyJwt } from '@/lib/jwt';
 export default async function Dashboard() {
   const cookieStore = cookies();
   const token = cookieStore.get('token')?.value;
+  const jwtSecret = process.env.JWT_SECRET;
 
-  if (!token) {
+  if (!token || !jwtSecret) {
     redirect('/login');
   }
 
   try {
-    await verifyJwt(token, process.env.JWT_SECRET!);
+    await verifyJwt(token, jwtSecret);
   } catch {
     redirect('/login');
   }

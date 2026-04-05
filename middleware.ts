@@ -10,8 +10,13 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL('/login', request.url));
     }
 
+    const jwtSecret = process.env.JWT_SECRET;
+    if (!jwtSecret) {
+      return NextResponse.redirect(new URL('/login', request.url));
+    }
+
     try {
-      await verifyJwt(token, process.env.JWT_SECRET!);
+      await verifyJwt(token, jwtSecret);
     } catch {
       return NextResponse.redirect(new URL('/login', request.url));
     }
