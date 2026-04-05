@@ -1,8 +1,8 @@
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
-import jwt from 'jsonwebtoken';
+import { verifyJwt } from '@/lib/jwt';
 
-export default function Dashboard() {
+export default async function Dashboard() {
   const cookieStore = cookies();
   const token = cookieStore.get('token')?.value;
 
@@ -11,7 +11,7 @@ export default function Dashboard() {
   }
 
   try {
-    jwt.verify(token, process.env.JWT_SECRET!);
+    await verifyJwt(token, process.env.JWT_SECRET!);
   } catch {
     redirect('/login');
   }
