@@ -7,8 +7,9 @@ export default function Home() {
     <div>
       <Header />
       <main>
-        <section id="home" className="py-12 md:py-20 bg-gray-100">
-          <div className="container mx-auto px-4 text-center">
+        <section id="home" className="relative py-12 md:py-20 bg-gradient-to-r from-blue-600 to-purple-700">
+          <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+          <div className="relative container mx-auto px-4 text-center text-white">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
             <p className="text-lg md:text-xl">Graphic Designer</p>
           </div>
@@ -27,6 +28,16 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <footer className="bg-slate-900 text-white py-8">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-lg font-semibold mb-4">Get In Touch</h3>
+          <div className="space-y-2">
+            <p><strong>Phone:</strong> 0798 405 726</p>
+            <p><strong>Email:</strong> <a href="mailto:brianmulilu2023@gmail.com" className="hover:text-blue-400">brianmulilu2023@gmail.com</a></p>
+          </div>
+          <p className="mt-4 text-sm">&copy; 2026 BM Graphix. All rights reserved.</p>
+        </div>
+      </footer>
       <WhatsAppButton />
     </div>
   );
