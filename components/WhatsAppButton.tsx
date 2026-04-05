@@ -1,6 +1,6 @@
 export default function WhatsAppButton() {
-  const message = encodeURIComponent("Hi, I'm interested in your work");
-  const whatsappUrl = `https://wa.me/1234567890?text=${message}`; // Replace with actual number
+  const message = encodeURIComponent("Hello! I'm interested in your portfolio and would like to connect.");
+  const whatsappUrl = `https://wa.me/254798405726?text=${message}`;
 
   return (
     <a

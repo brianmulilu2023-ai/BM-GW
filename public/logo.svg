@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 128" role="img" aria-labelledby="title">
+  <title id="title">BM Graphix logo</title>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1D2A78"/>
+      <stop offset="100%" stop-color="#29B6FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="128" fill="none"/>
+  <g transform="translate(0,0)">
+    <path d="M64 16 L96 64 L64 112 L32 64 Z" fill="url(#grad)"/>
+    <circle cx="64" cy="28" r="8" fill="#0D122B"/>
+    <circle cx="64" cy="64" r="6" fill="#0D122B"/>
+    <path d="M56 112 L64 96 L72 112 Z" fill="#0D122B"/>
+    <text x="64" y="78" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#ffffff">BM</text>
+  </g>
+  <g transform="translate(120,30)">
+    <text x="0" y="28" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800" fill="#1D2A78">BM</text>
+    <text x="0" y="64" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#29B6FF">GRAPHIX</text>
+  </g>
+</svg>
