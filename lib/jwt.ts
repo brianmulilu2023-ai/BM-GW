@@ -48,7 +48,10 @@ export const verifyJwt = async (token: string, secret: string) => {
 };
 
 const base64UrlEncode = (input: Uint8Array) => {
-  const binary = String.fromCharCode(...input);
+  let binary = '';
+  for (let i = 0; i < input.length; i += 1) {
+    binary += String.fromCharCode(input[i]);
+  }
   return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
 };
 
