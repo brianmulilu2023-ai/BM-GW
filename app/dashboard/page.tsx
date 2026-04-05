@@ -18,9 +18,9 @@ export default async function Dashboard() {
   }
 
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold">Admin Dashboard</h1>
-      <p>Welcome to your dashboard.</p>
+    <div className="p-4 md:p-8">
+      <h1 className="text-xl md:text-2xl font-bold mb-4">Admin Dashboard</h1>
+      <p className="text-sm md:text-base">Welcome to your dashboard.</p>
       {/* Add forms for profile and projects */}
     </div>
   );

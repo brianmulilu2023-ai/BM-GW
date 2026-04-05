@@ -25,24 +25,24 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <form onSubmit={handleSubmit} className="p-6 bg-white rounded shadow-md">
-        <h1 className="text-xl mb-4">Login</h1>
+    <div className="flex items-center justify-center min-h-screen px-4">
+      <form onSubmit={handleSubmit} className="w-full max-w-md p-6 bg-white rounded shadow-md">
+        <h1 className="text-xl md:text-2xl mb-4 text-center">Login</h1>
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="block w-full p-2 mb-2 border"
+          className="block w-full p-3 mb-3 border rounded-md"
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="block w-full p-2 mb-4 border"
+          className="block w-full p-3 mb-4 border rounded-md"
         />
-        <button type="submit" className="w-full p-2 bg-blue-500 text-white">Login</button>
+        <button type="submit" className="w-full p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600">Login</button>
       </form>
     </div>
   );
